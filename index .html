@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Catalogando Mídia</h1>
+
+    <form id="formulario">
+        <label for="nome">Nome:</label>
+        <input id="nome" type="text" name="nome" required>
+
+        <label for="genero">Gênero:</label>
+        <input id="genero" type="text" name="genero" required>
+
+        <label for="direcao">Direção:</label>
+        <input id="direcao" type="text" name="direcao" required>
+
+        <label for="ano">Ano de Lançamento:</label>
+        <input id="ano" type="text" name="ano" required>
+        
+        <label for="tipo">Tipo:</label>
+        <select name="tipo" id="tipo" required>
+            <option value="" disabled selected>...</option>
+            <option value="Filme">Filme</option>
+            <option value="Série">Série</option>
+        </select>
+
+        
+        <div id="bloco-temporadas" style="display: none; margin-top: 10px; margin-bottom: 10px;">
+            <label for="temporadas">Quantidade de Temporadas:</label>
+            <input id="temporadas" type="number" name="temporadas" min="1" value="1">
+        </div>
+
+        <label for="poster">Selecionar poster:</label>
+        <input type="file" id="foto" accept="image/*" required>
+
+        <button type="submit" id="cadastrar">Cadastrar</button>
+    </form>
+
+    <h2>Mídias Catalogadas</h2>
+
+    <div class="container-midias"></div>
+
+    <div class="letterboxd-rating">
+        <p>Avalie:</p>
+        <div class="stars">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+        <p class="rating-text">Sua nota: <span id="nota-valor">0</span> / 5</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
